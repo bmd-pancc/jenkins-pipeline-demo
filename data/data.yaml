@@ -1,0 +1,8 @@
+login_data:
+  # username,password,status,message,code  多条数据
+  - [ admin,HM_2023_test,200,成功,200 ]
+  - [ "",HM_2023_test,200,错误,500 ]
+  - [ pancc666,HM_2023_test,200,错误,500 ]
+
+
+# {"login_data":[[admin,HM_2023_test,200,成功,200],["",HM_2023_test,200,错误,500],[pancc666,HM_2023_test,200,错误,500]]}

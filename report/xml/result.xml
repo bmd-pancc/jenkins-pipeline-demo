@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="5" time="8.514" timestamp="2023-10-20T16:17:41.807066" hostname="DESKTOP-AARBTAJ"><testcase classname="scripts.test06_del_course_case.TestDeleteCourseCase" name="test01_delete_course_success" time="1.461"><failure message="assert '成功' in '{&quot;msg&quot;:&quot;操作失败&quot;,&quot;code&quot;:500}'&#10; +  where '{&quot;msg&quot;:&quot;操作失败&quot;,&quot;code&quot;:500}' = &lt;Response [200]&gt;.text">self = &lt;scripts.test06_del_course_case.TestDeleteCourseCase object at 0x000002378090CAC0&gt;
+
+    def test01_delete_course_success(self):
+    
+        res = self.course_api.delete_course(data=37013,token=TestDeleteCourseCase.token)
+        assert 200 == res.status_code
+&gt;       assert '成功' in res.text
+E       assert '成功' in '{"msg":"操作失败","code":500}'
+E        +  where '{"msg":"操作失败","code":500}' = &lt;Response [200]&gt;.text
+
+scripts\test06_del_course_case.py:37: AssertionError</failure></testcase><testcase classname="scripts.test06_del_course_case.TestDeleteCourseCase" name="test02_delete_course_fail" time="2.453" /><testcase classname="scripts.test06_del_course_case.TestDeleteCourseCase" name="test03_delete_course_fail" time="1.454"><failure message="assert '失败' in '{&quot;msg&quot;:&quot;Failed to convert value of type \'java.lang.String\' to required type \'java.lang.Long[]\'; nested exception is java.lang.NumberFormatException: For input string: \\&quot;abc\\&quot;&quot;,&quot;code&quot;:500}'&#10; +  where '{&quot;msg&quot;:&quot;Failed to convert value of type \'java.lang.String\' to required type \'java.lang.Long[]\'; nested exception is java.lang.NumberFormatException: For input string: \\&quot;abc\\&quot;&quot;,&quot;code&quot;:500}' = &lt;Response [200]&gt;.text">self = &lt;scripts.test06_del_course_case.TestDeleteCourseCase object at 0x0000023780919E50&gt;
+
+    def test03_delete_course_fail(self):
+    
+        res = self.course_api.delete_course(data="abc", token=TestDeleteCourseCase.token)
+        assert 200 == res.status_code
+&gt;       assert '失败' in res.text
+E       assert '失败' in '{"msg":"Failed to convert value of type \'java.lang.String\' to required type \'java.lang.Long[]\'; nested exception is java.lang.NumberFormatException: For input string: \\"abc\\"","code":500}'
+E        +  where '{"msg":"Failed to convert value of type \'java.lang.String\' to required type \'java.lang.Long[]\'; nested exception is java.lang.NumberFormatException: For input string: \\"abc\\"","code":500}' = &lt;Response [200]&gt;.text
+
+scripts\test06_del_course_case.py:53: AssertionError</failure></testcase><testcase classname="scripts.test06_del_course_case.TestDeleteCourseCase" name="test04_delete_course_fail" time="1.422" /><testcase classname="scripts.test06_del_course_case.TestDeleteCourseCase" name="test05_delete_course_fail" time="1.433" /></testsuite></testsuites>
